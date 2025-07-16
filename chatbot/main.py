@@ -5,7 +5,7 @@ from langchain_core.outputs import StrOutputParser
 from langhchain_community.llms import Ollama
 
 
-from streamlit as st
+import streamlit as st
 import os   
 from dotenv import load_dotenv
 
