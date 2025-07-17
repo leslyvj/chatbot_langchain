@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_openai import ChatOpenAI
+#from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.outputs import StrOutputParser
 from langchain_community.llms import Ollama
@@ -21,7 +21,7 @@ Prompt= ChatPromptTemplate.from_messages(
      ("user", "Question: {question}")] 
 ) 
 
-st.title("Chatbot with LangChain and OpenAI")
+st.title("Chatbot with LangChain and Ollama")
 question = st.text_input("Ask a question:")
 
 llm=Ollama(model="llama2")
