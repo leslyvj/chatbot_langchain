@@ -3,14 +3,12 @@ from langchain_community.llms import Cohere
 from langchain.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-import os
 from dotenv import load_dotenv
+import os
 
-# Load .env if needed
 load_dotenv()
+os.environ["COHERE_API_KEY"] = os.getenv("COHERE_API_KEY")
 
-# ✅ Set your Cohere API key securely
-COHERE_API_KEY=your_api_key_here
 
 # 🔧 Streamlit app title
 st.title("Chatbot with LangChain and Cohere")
