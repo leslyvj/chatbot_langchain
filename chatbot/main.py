@@ -2,7 +2,7 @@ from turtle import st
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.outputs import StrOutputParser
-from langhchain_community.llms import Ollama
+from langchain_community.llms import Ollama
 
 
 import streamlit as st
@@ -27,3 +27,8 @@ question = st.text_input("Ask a question:")
 llm=Ollama(model="llama2")
 output_parser = StrOutputParser()
 chain = Prompt | llm | output_parser
+
+if question:
+    response = chain.invoke({"question": question})
+    st.write(response)
+
